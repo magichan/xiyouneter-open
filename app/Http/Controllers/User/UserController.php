@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 use Auth;
+use Redirect;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -37,8 +38,7 @@ class UserController extends Controller
 
     $user->fill($data); 
     $user->save();
-    /* return view('test')->withVar($user->tel); */
-    /* return view('test')->withVar($data->tel); */
-    return view('test')->withVar($user->toArray());
+
+    return redirect('user/info');
   }
 }
